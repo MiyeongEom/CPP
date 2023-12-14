@@ -236,5 +236,10 @@ int main()
 
 	// 여기에 들어갈 코드를 답지에 적어라. (10점)	
 	// 어떤 문제점이 있었는지 설명하라. (10점)
-	delete[] temp;
+	for (int i = 0; i < num; ++i) {
+		delete mon[i];
+	}
+
+	// 배열 자체의 메모리 해제
+	delete[] mon;
 }
