@@ -209,7 +209,6 @@ int main()
 	// 여기에 들어갈 코드를 답지에 적어라. (30점)	
 		
 	delete mon[0];
-	mon[0] = nullptr;
 
 	Monster** newMon = new Monster * [num - 1];
 	for (int i = 1; i < num; ++i) {
