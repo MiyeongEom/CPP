@@ -211,19 +211,14 @@ int main()
 	delete mon[0];
 	mon[0] = nullptr;
 
-	Monster** temp = new Monster * [num - 1];
+	Monster** newMon = new Monster * [num - 1];
 	for (int i = 1; i < num; ++i) {
-		temp[i - 1] = mon[i];
+		newMon[i - 1] = mon[i];
 	}
 
-	delete[] mon;
-
-	mon = temp;
-	--num;
-
 	cout << "모든 Monster의 special 함수 호출 결과: ";
-	for (int i = 0; i < num; ++i) {
-		mon[i]->special();
+	for (int i = 0; i < num-1; ++i) {
+		newMon[i]->special();
 		cout << " ";
 	}
 // 여기에 있던 화면 출력 코드는 의도에 따라 보이지 않는다.
@@ -234,5 +229,6 @@ int main()
 
 	// 여기에 들어갈 코드를 답지에 적어라. (10점)	
 	// 어떤 문제점이 있었는지 설명하라. (10점)
-	delete[] temp;
+	delete[] mon;
+	delete[] newMon;
 }
